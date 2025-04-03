@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 const TodoItem = ({ todo }) => {
+  console.log(todo);
+  
   const [isTodoEditable, setIsTodoEditable] = useState(false);
   return (
     <div
@@ -11,6 +13,7 @@ const TodoItem = ({ todo }) => {
       <input type="checkbox" className="cursor-pointer" />
       <input
         type="text"
+        value={todo?.name}
         className={`border outline-none w-full bg-transparent rounded-lg ${
           isTodoEditable
             ? 'border-black/10 px-2'
